@@ -1,10 +1,20 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ??
+  (process.env.VERCEL_URL
+    ? `https://${process.env.VERCEL_URL}`
+    : "https://skyline-flow-toronto-plumbing.vercel.app");
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: "Skyline Flow Toronto Plumbing",
   description:
     "Modern Toronto plumbing service for leaks, drains, installs, pipe repairs, and urgent plumbing calls.",
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: "Skyline Flow Toronto Plumbing",
     description:
