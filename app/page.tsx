@@ -86,7 +86,7 @@ export default function Home() {
         <section className="hero" aria-labelledby="hero-title">
           <Image
             className="hero-image"
-            src="/skyline-flow-hero.png"
+            src="/skyline-flow-hero-premium.png"
             alt=""
             aria-hidden="true"
             fill
@@ -97,19 +97,19 @@ export default function Home() {
           <div className="flow-line" aria-hidden="true" />
 
           <div className="hero-content">
-            <p className="eyebrow">Toronto plumbing service</p>
+            <p className="eyebrow">Premium Toronto plumbing service</p>
             <h1 id="hero-title">Skyline Flow Toronto Plumbing</h1>
             <p className="hero-copy">
-              Clean, responsive plumbing help for Toronto homes and small
-              businesses. Call for leaks, drains, installs, and pipe repairs
-              handled with clear communication.
+              Refined plumbing support for Toronto homes and small businesses:
+              leaks, drains, fixture upgrades, and pipe repairs handled with a
+              clean finish and calm communication.
             </p>
             <div className="hero-actions" aria-label="Primary contact actions">
               <a className="button button-primary" href={phoneHref}>
                 Call {phoneDisplay}
               </a>
               <a className="button button-secondary" href="#contact">
-                Get contact details
+                Contact options
               </a>
             </div>
           </div>
@@ -141,7 +141,7 @@ export default function Home() {
         <section className="section service-section" id="services">
           <div className="section-heading reveal">
             <p className="eyebrow">What we handle</p>
-            <h2>Practical plumbing work, cleanly done.</h2>
+            <h2>Careful plumbing work with a cleaner finish.</h2>
             <p>
               Built for the calls people actually make: a leak under the sink,
               a drain that stopped moving, a fixture that needs replacing, or a
@@ -169,7 +169,7 @@ export default function Home() {
         <section className="process-band" id="process">
           <div className="process-copy reveal">
             <p className="eyebrow">Simple process</p>
-            <h2>Quick call. Clear next step. No drama.</h2>
+            <h2>A calm process from first call to final check.</h2>
           </div>
           <ol className="process-list">
             {steps.map((step, index) => (

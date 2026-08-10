@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import "@fontsource-variable/manrope";
+import "@fontsource-variable/playfair-display";
 import "./globals.css";
 
 const siteUrl =
@@ -19,14 +21,14 @@ export const metadata: Metadata = {
     title: "Skyline Flow Toronto Plumbing",
     description:
       "Clean, responsive plumbing help for Toronto homes and small businesses.",
-    images: ["/skyline-flow-hero.png"],
+    images: ["/skyline-flow-hero-premium.png"],
   },
   twitter: {
     card: "summary_large_image",
     title: "Skyline Flow Toronto Plumbing",
     description:
       "Clean, responsive plumbing help for Toronto homes and small businesses.",
-    images: ["/skyline-flow-hero.png"],
+    images: ["/skyline-flow-hero-premium.png"],
   },
   icons: {
     icon: "/favicon.svg",
