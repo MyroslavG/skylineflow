@@ -11,23 +11,23 @@ const siteUrl =
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: "Skyline Flow Toronto Plumbing",
+  title: "Skyline Flow Toronto Plumbing | Residential & Renovation Services",
   description:
-    "Modern Toronto plumbing service for leaks, drain camera inspections, drain cleaning, sump pumps, installs, pipe repairs, and urgent calls.",
+    "Residential, renovation and condo plumbing services for homes and projects throughout Toronto and the GTA.",
   alternates: {
     canonical: "/",
   },
   openGraph: {
     title: "Skyline Flow Toronto Plumbing",
     description:
-      "Clean plumbing help for leaks, drains, sump pumps, inspections, and repairs in Toronto.",
+      "Residential, renovation and condo plumbing services throughout Toronto and the GTA.",
     images: ["/4.jpeg"],
   },
   twitter: {
     card: "summary_large_image",
     title: "Skyline Flow Toronto Plumbing",
     description:
-      "Clean plumbing help for leaks, drains, sump pumps, inspections, and repairs in Toronto.",
+      "Residential, renovation and condo plumbing services throughout Toronto and the GTA.",
     images: ["/4.jpeg"],
   },
   icons: {
