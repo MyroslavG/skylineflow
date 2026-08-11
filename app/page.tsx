@@ -1,5 +1,6 @@
 import Image from "next/image";
 import type { CSSProperties } from "react";
+import { WorkGallery } from "./work-gallery";
 
 const primaryPhone = {
   label: "Main line",
@@ -228,24 +229,7 @@ export default function Home() {
             <h2>Real plumbing work, cleanly finished.</h2>
           </div>
 
-          <div className="work-grid">
-            {workPhotos.map((photo, index) => (
-              <figure
-                className="work-card reveal"
-                key={photo.src}
-                style={{ "--delay": `${index * 55}ms` } as CSSProperties}
-              >
-                <Image
-                  src={photo.src}
-                  alt={photo.title}
-                  width={720}
-                  height={900}
-                  sizes="(max-width: 680px) 100vw, (max-width: 980px) 50vw, 33vw"
-                />
-                <figcaption>{photo.title}</figcaption>
-              </figure>
-            ))}
-          </div>
+          <WorkGallery photos={workPhotos} />
         </section>
 
         <section className="process-band" id="process">
