@@ -305,7 +305,8 @@ a {
   box-shadow: 0 28px 80px rgb(7 28 32 / 0.16);
 }
 
-.quick-contact a {
+.quick-contact a,
+.quick-contact-item {
   display: flex;
   min-height: 116px;
   flex-direction: column;
@@ -335,7 +336,8 @@ a {
   text-transform: uppercase;
 }
 
-.quick-contact a span {
+.quick-contact a span,
+.quick-contact-item span {
   margin-bottom: 8px;
 }
 
@@ -949,7 +951,8 @@ a {
     margin-top: -26px;
   }
 
-  .quick-contact a {
+  .quick-contact a,
+  .quick-contact-item {
     min-height: 98px;
     padding: 20px;
   }

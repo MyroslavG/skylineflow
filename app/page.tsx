@@ -12,7 +12,7 @@ const secondaryPhone = {
   display: "(289) 885-3134",
   href: "tel:+12898853134",
 };
-const address = "36 Brentcliffe Rd, Toronto";
+const address = "Address coming soon";
 
 const services = [
   {
@@ -95,13 +95,6 @@ const schema = {
       contactType: "customer service",
     },
   ],
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "36 Brentcliffe Rd",
-    addressLocality: "Toronto",
-    addressRegion: "ON",
-    addressCountry: "CA",
-  },
   areaServed: "Toronto",
   sameAs: [
     "https://www.instagram.com/skylineflowtoronto/",
@@ -185,14 +178,10 @@ export default function Home() {
             <span>Instagram</span>
             @skylineflowtoronto
           </a>
-          <a
-            href="https://www.google.com/maps/search/?api=1&query=36+Brentcliffe+Rd+Toronto"
-            target="_blank"
-            rel="noreferrer"
-          >
+          <div className="quick-contact-item">
             <span>Location</span>
             {address}
-          </a>
+          </div>
         </section>
 
         <section className="section service-section" id="services">
@@ -290,16 +279,11 @@ export default function Home() {
               <strong>Skyline Flow Toronto</strong>
               <small>Open the Facebook page</small>
             </a>
-            <a
-              className="contact-card reveal"
-              href="https://www.google.com/maps/search/?api=1&query=36+Brentcliffe+Rd+Toronto"
-              target="_blank"
-              rel="noreferrer"
-            >
+            <div className="contact-card contact-card-static reveal">
               <span>Location</span>
               <strong>{address}</strong>
-              <small>View on Google Maps</small>
-            </a>
+              <small>Details coming soon</small>
+            </div>
           </div>
         </section>
       </main>
