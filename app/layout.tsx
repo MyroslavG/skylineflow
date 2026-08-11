@@ -21,18 +21,19 @@ export const metadata: Metadata = {
     title: "Skyline Flow Toronto Plumbing",
     description:
       "Clean plumbing help for leaks, drains, sump pumps, inspections, and repairs in Toronto.",
-    images: ["/skyline-flow-hero-premium.png"],
+    images: ["/4.jpeg"],
   },
   twitter: {
     card: "summary_large_image",
     title: "Skyline Flow Toronto Plumbing",
     description:
       "Clean plumbing help for leaks, drains, sump pumps, inspections, and repairs in Toronto.",
-    images: ["/skyline-flow-hero-premium.png"],
+    images: ["/4.jpeg"],
   },
   icons: {
-    icon: "/favicon.svg",
-    shortcut: "/favicon.svg",
+    icon: "/logo.jpeg",
+    shortcut: "/logo.jpeg",
+    apple: "/logo.jpeg",
   },
 };
 

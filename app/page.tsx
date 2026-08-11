@@ -40,6 +40,37 @@ const services = [
   },
 ];
 
+const workPhotos = [
+  {
+    src: "/1.jpeg",
+    title: "Sump pump service",
+  },
+  {
+    src: "/2.jpeg",
+    title: "Mechanical room piping",
+  },
+  {
+    src: "/3.jpeg",
+    title: "Copper reroute",
+  },
+  {
+    src: "/4.jpeg",
+    title: "Valve and riser work",
+  },
+  {
+    src: "/5.jpeg",
+    title: "Overhead piping",
+  },
+  {
+    src: "/6.jpeg",
+    title: "Drain clean out",
+  },
+  {
+    src: "/7.jpeg",
+    title: "Copper fabrication",
+  },
+];
+
 const steps = [
   "Tell us what is happening",
   "Get a clear arrival plan",
@@ -88,12 +119,13 @@ export default function Home() {
       <header className="site-header">
         <a className="brand" href="#top" aria-label="Skyline Flow home">
           <span className="brand-mark" aria-hidden="true">
-            SF
+            <Image src="/logo.jpeg" alt="" width={46} height={46} priority />
           </span>
           <span>Skyline Flow</span>
         </a>
         <nav className="nav-links" aria-label="Page sections">
           <a href="#services">Services</a>
+          <a href="#work">Work</a>
           <a href="#process">Process</a>
           <a href="#contact">Contact</a>
         </nav>
@@ -106,7 +138,7 @@ export default function Home() {
         <section className="hero" aria-labelledby="hero-title">
           <Image
             className="hero-image"
-            src="/skyline-flow-hero-premium.png"
+            src="/4.jpeg"
             alt=""
             aria-hidden="true"
             fill
@@ -186,6 +218,32 @@ export default function Home() {
                 <h3>{service.title}</h3>
                 <p>{service.text}</p>
               </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="section work-section" id="work">
+          <div className="section-heading reveal">
+            <p className="eyebrow">Selected work</p>
+            <h2>Real plumbing work, cleanly finished.</h2>
+          </div>
+
+          <div className="work-grid">
+            {workPhotos.map((photo, index) => (
+              <figure
+                className="work-card reveal"
+                key={photo.src}
+                style={{ "--delay": `${index * 55}ms` } as CSSProperties}
+              >
+                <Image
+                  src={photo.src}
+                  alt={photo.title}
+                  width={720}
+                  height={900}
+                  sizes="(max-width: 680px) 100vw, (max-width: 980px) 50vw, 33vw"
+                />
+                <figcaption>{photo.title}</figcaption>
+              </figure>
             ))}
           </div>
         </section>
