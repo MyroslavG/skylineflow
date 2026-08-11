@@ -13,21 +13,21 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: "Skyline Flow Toronto Plumbing",
   description:
-    "Modern Toronto plumbing service for leaks, drains, installs, pipe repairs, and urgent plumbing calls.",
+    "Modern Toronto plumbing service for leaks, drain camera inspections, drain cleaning, sump pumps, installs, pipe repairs, and urgent calls.",
   alternates: {
     canonical: "/",
   },
   openGraph: {
     title: "Skyline Flow Toronto Plumbing",
     description:
-      "Clean, responsive plumbing help for Toronto homes and small businesses.",
+      "Clean plumbing help for leaks, drains, sump pumps, inspections, and repairs in Toronto.",
     images: ["/skyline-flow-hero-premium.png"],
   },
   twitter: {
     card: "summary_large_image",
     title: "Skyline Flow Toronto Plumbing",
     description:
-      "Clean, responsive plumbing help for Toronto homes and small businesses.",
+      "Clean plumbing help for leaks, drains, sump pumps, inspections, and repairs in Toronto.",
     images: ["/skyline-flow-hero-premium.png"],
   },
   icons: {

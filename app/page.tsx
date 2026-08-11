@@ -1,34 +1,42 @@
 import Image from "next/image";
 import type { CSSProperties } from "react";
 
-const phoneDisplay = "(437) 229-0543";
-const phoneHref = "tel:+14372290543";
+const primaryPhone = {
+  label: "Main line",
+  display: "(437) 229-0543",
+  href: "tel:+14372290543",
+};
+const secondaryPhone = {
+  label: "Second line",
+  display: "(289) 885-3134",
+  href: "tel:+12898853134",
+};
 const address = "36 Brentcliffe Rd, Toronto";
 
 const services = [
   {
-    title: "Leak Repair",
-    text: "Targeted help for dripping fixtures, visible pipe leaks, and small water issues before they spread.",
+    title: "Leak Investigation",
+    text: "Leak investigation, leak repair, fan coil leaks, pipe repair, and pipe replacement.",
   },
   {
-    title: "Drain Clearing",
-    text: "Kitchen, bath, laundry, and floor drains cleared with a tidy, practical approach.",
+    title: "Drain Camera & Cleaning",
+    text: "Camera drain inspection, drain cleaning, clogged drains, clean outs, and kitchen backups.",
   },
   {
-    title: "Fixture Installs",
-    text: "Faucets, toilets, valves, vanities, and appliance hookups fitted cleanly and checked before handoff.",
+    title: "Sump Pump Service",
+    text: "Sump pump installation, servicing, pump replacement, and urgent pump support.",
   },
   {
-    title: "Pipe Work",
-    text: "Repairs and replacements for worn connections, exposed lines, shutoffs, and supply issues.",
+    title: "Fixture & Appliance Installs",
+    text: "Dishwasher installs, faucets, toilets, valves, recirc lines, and fixture upgrades.",
   },
   {
-    title: "Urgent Calls",
-    text: "Fast response for active leaks, blocked drains, and plumbing problems that cannot wait.",
+    title: "Risers, Valves & PRV",
+    text: "Main shut off valves, PRV replacement, manifolds, riser shutdowns, and building repairs.",
   },
   {
-    title: "Small Business",
-    text: "Reliable plumbing support for offices, shops, salons, cafes, and Toronto service spaces.",
+    title: "Plumbing Diagnostics",
+    text: "Inspect plumbing, crossover checks, noise investigation, Kitec replacement, and DHW issues.",
   },
 ];
 
@@ -42,7 +50,19 @@ const schema = {
   "@context": "https://schema.org",
   "@type": "Plumber",
   name: "Skyline Flow Toronto Plumbing",
-  telephone: "+14372290543",
+  telephone: primaryPhone.href.replace("tel:", ""),
+  contactPoint: [
+    {
+      "@type": "ContactPoint",
+      telephone: primaryPhone.href.replace("tel:", ""),
+      contactType: "customer service",
+    },
+    {
+      "@type": "ContactPoint",
+      telephone: secondaryPhone.href.replace("tel:", ""),
+      contactType: "customer service",
+    },
+  ],
   address: {
     "@type": "PostalAddress",
     streetAddress: "36 Brentcliffe Rd",
@@ -77,8 +97,8 @@ export default function Home() {
           <a href="#process">Process</a>
           <a href="#contact">Contact</a>
         </nav>
-        <a className="header-call" href={phoneHref}>
-          Call {phoneDisplay}
+        <a className="header-call" href={primaryPhone.href}>
+          Call {primaryPhone.display}
         </a>
       </header>
 
@@ -101,24 +121,28 @@ export default function Home() {
             <h1 id="hero-title">Skyline Flow Toronto Plumbing</h1>
             <p className="hero-copy">
               Refined plumbing support for Toronto homes and small businesses:
-              leaks, drains, fixture upgrades, and pipe repairs handled with a
-              clean finish and calm communication.
+              leaks, drains, sump pumps, fixture upgrades, and pipe repairs
+              handled with a clean finish and calm communication.
             </p>
             <div className="hero-actions" aria-label="Primary contact actions">
-              <a className="button button-primary" href={phoneHref}>
-                Call {phoneDisplay}
+              <a className="button button-primary" href={primaryPhone.href}>
+                Call {primaryPhone.display}
               </a>
-              <a className="button button-secondary" href="#contact">
-                Contact options
+              <a className="button button-secondary" href={secondaryPhone.href}>
+                Call {secondaryPhone.display}
               </a>
             </div>
           </div>
         </section>
 
         <section className="quick-contact" aria-label="Quick contact details">
-          <a href={phoneHref}>
-            <span>Phone</span>
-            {phoneDisplay}
+          <a href={primaryPhone.href}>
+            <span>{primaryPhone.label}</span>
+            {primaryPhone.display}
+          </a>
+          <a href={secondaryPhone.href}>
+            <span>{secondaryPhone.label}</span>
+            {secondaryPhone.display}
           </a>
           <a
             href="https://www.instagram.com/skylineflowtoronto/"
@@ -143,9 +167,9 @@ export default function Home() {
             <p className="eyebrow">What we handle</p>
             <h2>Careful plumbing work with a cleaner finish.</h2>
             <p>
-              Built for the calls people actually make: a leak under the sink,
-              a drain that stopped moving, a fixture that needs replacing, or a
-              pipe that needs attention.
+              Built for the calls people actually make: leaks, drain backups,
+              sump pump issues, camera inspections, and clean repairs that need
+              to be done properly.
             </p>
           </div>
 
@@ -196,11 +220,14 @@ export default function Home() {
           </div>
 
           <div className="contact-grid">
-            <a className="contact-card reveal" href={phoneHref}>
+            <div className="contact-card contact-card-static reveal">
               <span>Call</span>
-              <strong>{phoneDisplay}</strong>
-              <small>Tap to start a phone call</small>
-            </a>
+              <div className="phone-list">
+                <a href={primaryPhone.href}>{primaryPhone.display}</a>
+                <a href={secondaryPhone.href}>{secondaryPhone.display}</a>
+              </div>
+              <small>Tap either number to start a phone call</small>
+            </div>
             <a
               className="contact-card reveal"
               href="https://www.instagram.com/skylineflowtoronto/"
@@ -237,7 +264,10 @@ export default function Home() {
 
       <footer className="site-footer">
         <span>Skyline Flow Toronto Plumbing</span>
-        <a href={phoneHref}>{phoneDisplay}</a>
+        <div className="footer-phones">
+          <a href={primaryPhone.href}>{primaryPhone.display}</a>
+          <a href={secondaryPhone.href}>{secondaryPhone.display}</a>
+        </div>
       </footer>
     </>
   );
