@@ -100,7 +100,6 @@ export function RequestServiceForm({
     <form
       className="request-form reveal"
       data-emailjs-form
-      encType="multipart/form-data"
       onSubmit={handleSubmit}
     >
       <div className="form-grid">
@@ -151,19 +150,6 @@ export function RequestServiceForm({
           placeholder="Describe the fixture, leak, drain, piping, sump pump or renovation project."
           rows={6}
         />
-      </label>
-
-      <label>
-        <span>Upload Photos</span>
-        <input
-          accept="image/*"
-          multiple
-          name="photos"
-          type="file"
-        />
-        <small>
-          Attach photos of the fixture, leak, piping or problem area.
-        </small>
       </label>
 
       <div className="form-actions">

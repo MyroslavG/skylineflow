@@ -207,7 +207,7 @@ const whyItems = [
 const processSteps = [
   {
     title: "Tell us what is happening",
-    text: "Call us or submit a service request. Photos can help us understand the situation before the visit.",
+    text: "Call us or submit a service request with the main details about the issue.",
   },
   {
     title: "Arrange the visit",
@@ -511,7 +511,7 @@ export default function Home() {
             <p>
               Whether it is a leaking faucet, toilet replacement, bathroom
               renovation, drain problem, sump pump or a difficult issue that
-              needs proper diagnosis, send a few details. Photos are welcome.
+              needs proper diagnosis, send a few details and we will follow up.
             </p>
             <div className="contact-methods">
               <a href={primaryPhone.href}>
