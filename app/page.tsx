@@ -187,10 +187,6 @@ const washroomPhotos = [
     title: "Washroom rough-in preparation",
   },
   {
-    src: "/washroom3.jpeg",
-    title: "Fixture wall plumbing layout",
-  },
-  {
     src: "/washroom4.jpeg",
     title: "Bathroom water line work",
   },
