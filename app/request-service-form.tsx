@@ -16,6 +16,7 @@ const serviceTypes = [
   "Residential Plumbing",
   "Bathroom Renovation",
   "Kitchen Renovation",
+  "Hydronic Radiant Floor Heating",
   "Drain Service",
   "Fixture Installation",
   "Sump Pump",

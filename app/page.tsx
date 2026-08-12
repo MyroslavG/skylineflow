@@ -66,6 +66,27 @@ const serviceSections = [
     featured: true,
   },
   {
+    kicker: "Hydronic Radiant Floor Heating",
+    title: "Comfortable, efficient heating from the floor up.",
+    text: "Warm water circulated through tubing beneath the floor provides comfortable, even heat for bathrooms, basements and residential renovation projects.",
+    items: [
+      "Hydronic radiant floor heating installation",
+      "PEX tubing installation",
+      "Heating manifolds",
+      "Multiple heating zones",
+      "Zone valves and controls",
+      "Circulation pumps",
+      "System piping",
+      "Pressure testing",
+      "System flushing",
+      "Troubleshooting and repairs",
+      "Renovation projects",
+      "Retrofit projects",
+    ],
+    cta: "Request radiant heating service",
+    featured: true,
+  },
+  {
     kicker: "Drain Cleaning & Camera Inspection",
     title: "Find the problem, not just the symptom.",
     text: "Slow or blocked drains can be caused by more than a simple clog. Cleaning and camera inspection help identify what is happening inside the system.",
@@ -224,6 +245,41 @@ const washroomPhotos = [
   },
 ];
 
+const floorHeatingPhotos = [
+  {
+    src: "/floor_heating1.jpeg",
+    title: "Hydronic radiant floor heating tubing",
+  },
+  {
+    src: "/floor_heating2.jpeg",
+    title: "PEX tubing layout for radiant floor heating",
+  },
+  {
+    src: "/floor_heating3.jpeg",
+    title: "Radiant heating installation detail",
+  },
+  {
+    src: "/floor_heating4.jpeg",
+    title: "Hydronic floor heating rough-in",
+  },
+  {
+    src: "/floor_heating5.jpeg",
+    title: "Radiant heating zone preparation",
+  },
+  {
+    src: "/floor_heating6.jpeg",
+    title: "Floor heating piping installation",
+  },
+  {
+    src: "/floor_heating7.jpeg",
+    title: "Hydronic heating system preparation",
+  },
+  {
+    src: "/floor_heating8.jpeg",
+    title: "Radiant floor heating project work",
+  },
+];
+
 const whyItems = [
   {
     title: "Residential & Renovation Experience",
@@ -307,6 +363,7 @@ const schema = {
     "Residential plumbing",
     "Renovation plumbing",
     "Washroom renovation",
+    "Hydronic radiant floor heating",
     "Condo plumbing",
     "Drain cleaning",
     "Camera inspection",
@@ -337,6 +394,7 @@ export default function Home() {
         <nav className="nav-links" aria-label="Page sections">
           <a href="#services">Services</a>
           <a href="#washroom-renovation">Washrooms</a>
+          <a href="#radiant-floor-heating">Heating</a>
           <a href="#work">Work</a>
           <a href="#about">About</a>
           <a href="#request-service">Request</a>
@@ -464,6 +522,24 @@ export default function Home() {
           </div>
 
           <WorkGallery photos={washroomPhotos} />
+        </section>
+
+        <section
+          className="section radiant-section"
+          id="radiant-floor-heating"
+        >
+          <div className="section-heading reveal">
+            <p className="eyebrow">Hydronic radiant floor heating</p>
+            <h2>Comfortable, efficient heating from the floor up.</h2>
+            <p>
+              Skyline Flow installs and services hydronic radiant floor heating
+              for residential construction and renovation projects, including
+              PEX tubing, manifolds, zones, controls, circulation pumps,
+              pressure testing, flushing, troubleshooting and repairs.
+            </p>
+          </div>
+
+          <WorkGallery photos={floorHeatingPhotos} />
         </section>
 
         <section className="section work-section" id="work">
