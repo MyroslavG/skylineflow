@@ -23,6 +23,11 @@ npm run build
    - Framework preset: Next.js
    - Build command: `npm run build`
    - Install command: `npm install`
-4. No environment variables are required for this one-page site.
+4. Add these environment variables in Vercel:
+   - `NEXT_PUBLIC_EMAILJS_SERVICE_ID`
+   - `NEXT_PUBLIC_EMAILJS_TEMPLATE_ID`
+   - `NEXT_PUBLIC_EMAILJS_PUBLIC_KEY`
+
+The current public EmailJS values are listed in `.env.example`.
 
 This project uses Next.js and requires Node.js `>=22.13.0`.
