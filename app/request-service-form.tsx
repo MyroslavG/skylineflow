@@ -28,7 +28,7 @@ const emailJsConfig = {
   serviceId:
     process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID ?? "service_ap77yjl",
   templateId:
-    process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID ?? "template_qz0s6xs",
+    process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID ?? "template_9imfi8c",
   publicKey:
     process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY ?? "2pYZiqZw71whtYv7v",
 };
