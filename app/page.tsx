@@ -177,6 +177,57 @@ const workPhotos = [
   },
 ];
 
+const washroomPhotos = [
+  {
+    src: "/washroom1.jpeg",
+    title: "Washroom renovation plumbing",
+  },
+  {
+    src: "/washroom2.jpeg",
+    title: "Washroom rough-in preparation",
+  },
+  {
+    src: "/washroom3.jpeg",
+    title: "Fixture wall plumbing layout",
+  },
+  {
+    src: "/washroom4.jpeg",
+    title: "Bathroom water line work",
+  },
+  {
+    src: "/washroom5.jpeg",
+    title: "Drain and supply preparation",
+  },
+  {
+    src: "/washroom6.jpeg",
+    title: "Renovation plumbing detail",
+  },
+  {
+    src: "/washroom7.jpeg",
+    title: "Clean washroom installation work",
+  },
+  {
+    src: "/washroom8.jpeg",
+    title: "Vanity and fixture plumbing",
+  },
+  {
+    src: "/washroom9.jpeg",
+    title: "Washroom plumbing progress",
+  },
+  {
+    src: "/washroom10.jpeg",
+    title: "Finished renovation plumbing detail",
+  },
+  {
+    src: "/washroom11.jpeg",
+    title: "Washroom fixture installation",
+  },
+  {
+    src: "/washroom12.jpeg",
+    title: "Completed washroom renovation work",
+  },
+];
+
 const whyItems = [
   {
     title: "Residential & Renovation Experience",
@@ -259,6 +310,7 @@ const schema = {
   serviceType: [
     "Residential plumbing",
     "Renovation plumbing",
+    "Washroom renovation",
     "Condo plumbing",
     "Drain cleaning",
     "Camera inspection",
@@ -288,7 +340,7 @@ export default function Home() {
         </a>
         <nav className="nav-links" aria-label="Page sections">
           <a href="#services">Services</a>
-          <a href="#renovations">Renovations</a>
+          <a href="#washroom-renovation">Washrooms</a>
           <a href="#work">Work</a>
           <a href="#about">About</a>
           <a href="#request-service">Request</a>
@@ -400,6 +452,22 @@ export default function Home() {
               </article>
             ))}
           </div>
+        </section>
+
+        <section
+          className="section washroom-section"
+          id="washroom-renovation"
+        >
+          <div className="section-heading reveal">
+            <p className="eyebrow">Washroom renovation</p>
+            <h2>Washroom renovation plumbing with a clean finish.</h2>
+            <p>
+              Rough-ins, fixture relocation, drain and water line changes, and
+              finish plumbing planned around the renovation sequence.
+            </p>
+          </div>
+
+          <WorkGallery photos={washroomPhotos} />
         </section>
 
         <section className="section work-section" id="work">
