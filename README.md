@@ -23,11 +23,8 @@ npm run build
    - Framework preset: Next.js
    - Build command: `npm run build`
    - Install command: `npm install`
-4. Add these environment variables in Vercel:
-   - `NEXT_PUBLIC_EMAILJS_SERVICE_ID`
-   - `NEXT_PUBLIC_EMAILJS_TEMPLATE_ID`
-   - `NEXT_PUBLIC_EMAILJS_PUBLIC_KEY`
+4. Optional: add `N8N_LEAD_WEBHOOK_URL` in Vercel if the lead webhook URL changes.
 
-The current public EmailJS values are listed in `.env.example`.
+The current n8n webhook URL is listed in `.env.example`.
 
 This project uses Next.js and requires Node.js `>=22.13.0`.

@@ -12,26 +12,24 @@ type FormStatus = {
   message: string;
 };
 
-const serviceTypes = [
-  "Residential Plumbing",
-  "Bathroom Renovation",
-  "Kitchen Renovation",
-  "Hydronic Radiant Floor Heating",
-  "Drain Service",
-  "Fixture Installation",
-  "Sump Pump",
-  "Condo Plumbing",
-  "Leak / Diagnostics",
-  "Other",
+const propertyTypes = [
+  {
+    label: "House",
+    value: "house",
+  },
+  {
+    label: "Building",
+    value: "building",
+  },
+  {
+    label: "Commercial",
+    value: "commercial",
+  },
 ];
 
-const emailJsConfig = {
-  serviceId:
-    process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID ?? "service_ap77yjl",
-  templateId:
-    process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID ?? "template_9imfi8c",
-  publicKey:
-    process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY ?? "2pYZiqZw71whtYv7v",
+const getFieldValue = (formData: FormData, name: string) => {
+  const value = formData.get(name);
+  return typeof value === "string" ? value.trim() : "";
 };
 
 export function RequestServiceForm({
@@ -50,16 +48,15 @@ export function RequestServiceForm({
 
     const form = event.currentTarget;
     const formData = new FormData(form);
-
-    formData.append("service_id", emailJsConfig.serviceId);
-    formData.append("template_id", emailJsConfig.templateId);
-    formData.append("user_id", emailJsConfig.publicKey);
-    formData.append("submitted_at", new Date().toLocaleString("en-CA", {
-      dateStyle: "medium",
-      timeStyle: "short",
-      timeZone: "America/Toronto",
-    }));
-    formData.append("website", "Skyline Flow Toronto Plumbing");
+    const payload = {
+      name: getFieldValue(formData, "name"),
+      phone: getFieldValue(formData, "phone"),
+      email: getFieldValue(formData, "email"),
+      address: getFieldValue(formData, "address"),
+      property_type: getFieldValue(formData, "property_type"),
+      preferred_time: getFieldValue(formData, "preferred_time"),
+      problem_description: getFieldValue(formData, "problem_description"),
+    };
 
     setIsSubmitting(true);
     setStatus({
@@ -69,10 +66,13 @@ export function RequestServiceForm({
 
     try {
       const response = await fetch(
-        "https://api.emailjs.com/api/v1.0/email/send-form",
+        "/api/leads",
         {
           method: "POST",
-          body: formData,
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(payload),
         },
       );
 
@@ -100,13 +100,13 @@ export function RequestServiceForm({
   return (
     <form
       className="request-form reveal"
-      data-emailjs-form
+      data-lead-form
       onSubmit={handleSubmit}
     >
       <div className="form-grid">
         <label>
           <span>Name*</span>
-          <input autoComplete="name" name="from_name" required type="text" />
+          <input autoComplete="name" name="name" required type="text" />
         </label>
 
         <label>
@@ -116,39 +116,52 @@ export function RequestServiceForm({
 
         <label>
           <span>Email</span>
-          <input autoComplete="email" name="reply_to" type="email" />
+          <input autoComplete="email" name="email" type="email" />
         </label>
 
         <label>
           <span>City / Service Address*</span>
           <input
             autoComplete="street-address"
-            name="service_address"
+            name="address"
             required
             type="text"
           />
         </label>
       </div>
 
-      <label>
-        <span>Type of Service</span>
-        <select defaultValue="" name="service_type">
-          <option disabled value="">
-            Select a service
-          </option>
-          {serviceTypes.map((service) => (
-            <option key={service} value={service}>
-              {service}
+      <div className="form-grid">
+        <label>
+          <span>Property Type*</span>
+          <select defaultValue="" name="property_type" required>
+            <option disabled value="">
+              Select property type
             </option>
-          ))}
-        </select>
-      </label>
+            {propertyTypes.map((propertyType) => (
+              <option key={propertyType.value} value={propertyType.value}>
+                {propertyType.label}
+              </option>
+            ))}
+          </select>
+        </label>
+
+        <label>
+          <span>Preferred Time</span>
+          <input
+            autoComplete="off"
+            name="preferred_time"
+            placeholder="Morning, afternoon, or a date"
+            type="text"
+          />
+        </label>
+      </div>
 
       <label>
         <span>Tell Us What Is Happening</span>
         <textarea
-          name="message"
+          name="problem_description"
           placeholder="Describe the fixture, leak, drain, piping, sump pump or renovation project."
+          required
           rows={6}
         />
       </label>
